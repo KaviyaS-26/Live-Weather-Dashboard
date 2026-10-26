@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Live Weather Dashboard providing real-time weather conditions and 5-day forecasts using Open-Meteo APIs.">
+  <title>Live Weather Dashboard</title>
+  <!-- Google Fonts: Inter for modern, clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1 class="app-title">Live Weather Dashboard</h1>
+      <p class="app-subtitle">Real-time weather insights &amp; 5-day forecasts</p>
+    </header>
+
+    <main class="dashboard-main">
+      <form id="form" class="search-form" novalidate>
+        <div class="input-wrapper">
+          <label for="city" class="visually-hidden">City Name</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="Search for a city (e.g. Pune, London)..."
+            autocomplete="off"
+            spellcheck="false"
+          >
+        </div>
+        <button type="submit" id="search-btn" class="search-button">
+          Search
+        </button>
+      </form>
+
+      <p id="status" class="status-message" role="status" aria-live="polite"></p>
+
+      <section id="current" class="current-section" aria-label="Current Weather"></section>
+
+      <section id="forecast" class="forecast-section" aria-label="5-Day Weather Forecast"></section>
+    </main>
+  </div>
+</body>
+</html>
